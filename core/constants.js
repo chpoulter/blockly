@@ -364,6 +364,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
             }
         });
     case 'wedo':
+    case 'orb':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ], ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
@@ -433,7 +434,8 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
             this.sourceBlock_.updateType_(option);
         });
     case 'wedo':
-        throw "no lists supported for wedo!";
+    case 'orb':
+        throw "no lists supported for " + device + "!";
     case 'edison':
     default:
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ], function(option) {
