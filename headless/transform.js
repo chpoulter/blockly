@@ -40,10 +40,9 @@ require('../blocks/robSensors.js');
 require('../blocks/text.js');
 require('../blocks/variables.js');
 require('../blocks/vorwerkActions.js');
-
 require('../blocks/robActions.js');
+require('../blocks/robActionsNewConfig.js');
 require('../blocks/robConfig.js');
-
 require('../msg/js/en.js');
 
 // Process arguments

@@ -30,6 +30,12 @@ Blockly.Blocks['robSensors_encoder_reset'] = {
         var motorport = new Blockly.FieldDropdown([['A', 'A'], ['B', 'B'], ['C', 'C'], ['D', 'D']]);
         if (this.workspace.device === 'botnroll') {
             motorport = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_LEFT, 'B'], [Blockly.Msg.MOTOR_RIGHT, 'C']]);
+        } else if (this.workspace.device === 'mbot2') {
+            motorport = getConfigPorts('encoder');
+            this.dependConfig = {
+                'type': 'encoder',
+                'dropDown': motorport
+            };
         }
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_ENCODER).appendField(motorport, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
         this.setPreviousStatement(true);
@@ -39,16 +45,44 @@ Blockly.Blocks['robSensors_encoder_reset'] = {
 };
 
 Blockly.Blocks['robSensors_gyro_reset'] = {
-    init: function() {
+    init: function () {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         // this.setInputsInline(true);
         var sensorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
+        if (this.workspace.device === "mbot2") {
+            sensorPort = getConfigPorts("gyro");
+            this.dependConfig = {
+              type: "gyro",
+              dropDown: sensorPort,
+            };
+            this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
+            hidePortIfOnlyInbuilt(this);
+        } else {
+            this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.GYRO_RESET_TOOLTIP);
     }
 };
+
+Blockly.Blocks['robSensors_sound_record'] = {
+    init: function () {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        var mode = new Blockly.FieldDropdown([[Blockly.Msg.START, 'start'], [Blockly.Msg.MOTOR_STOP, 'stop']])
+        var dropDownPorts = getConfigPorts('sound');
+
+        this.dependConfig = {
+            'type': 'sound',
+            'dropDown': dropDownPorts
+        };
+        this.appendDummyInput().appendField(mode, 'mode').appendField(Blockly.Msg.SENSOR_SOUND_RECORD).appendField(dropDownPorts, 'ACTORPORT');
+        hidePortIfOnlyInbuilt(this); 
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.SOUND_RECORD_TOOLTIP);
+    }
+}
 
 Blockly.Blocks['robSensors_timer_reset'] = {
     /**
