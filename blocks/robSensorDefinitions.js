@@ -1559,8 +1559,7 @@ sensorsAll.edison = [ sensors.key.edison, sensors.infrared.edison, sensors.irsee
 sensorsAll.nano33ble = [ sensors.out.nano33ble, sensors.key.nano33ble, sensors.timer.nano33ble, sensors.temperature.nano33ble, sensors.ultrasonic.nano33ble,
     sensors.light.nano33ble, sensors.moisture.nano33ble, sensors.potentiometer.nano33ble, sensors.infrared.nano33ble, sensors.humidity.nano33ble,
     sensors.motion.nano33ble, sensors.pulse.nano33ble, sensors.drop.nano33ble, sensors.rfid.nano33ble, sensors.gyro.nano33ble,
-    sensors.accelerometer.arduino ];       
-sensorsAll.orb = [ sensors.ultrasonic.orb, sensors.gyro.orb, sensors.touch.orb, sensors.timer.orb, sensors.colour.orb, sensors.infrared.orb, sensors.compass.orb ];       
+    sensors.accelerometer.arduino ];            
 sensorsAll.orb = [ sensors.ultrasonic.orb, sensors.gyro.orb, sensors.touch.orb, sensors.timer.orb, sensors.colour.orb, sensors.infrared.orb];
 
 function initSensors() {

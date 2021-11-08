@@ -203,7 +203,6 @@ Blockly.Blocks.robConfigDefinitions['pins_wedo'] = function() {
     return createPins(1, 2);
 };
 
-<<<<<<< HEAD
 Blockly.Blocks.robConfigDefinitions['pinsRaspberrypi'] = function() {
     var array = [
         ['GPIO 1 (ID_SC)', '1'],
@@ -237,7 +236,6 @@ Blockly.Blocks.robConfigDefinitions['pinsRaspberrypi'] = function() {
     return array;
 };
 
-=======
 Blockly.Blocks.robConfigDefinitions['pinsOrb'] = function() {
     return createPins(1, 4);
 };
@@ -258,7 +256,6 @@ confBlocks.colour.orb = {
     pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
     sensor : true
 };
->>>>>>> OpenRoberta/openroberta-labWIP - add orb
 
 confBlocks.ultrasonic = {};
 confBlocks.ultrasonic.arduino = {
