@@ -514,7 +514,6 @@ confBlocks.infrared.wedo = {
 };
 confBlocks.infrared.orb = {
     title : 'INFRARED',
-    bricks : true,
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
     pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
     sensor : true
@@ -1250,6 +1249,10 @@ confBlocks.motor.raspberrypi = {
 };
 confBlocks.motor.orb = {
     title : 'MOTOR',
+    inputs: [
+        ['BRICK_WHEEL_DIAMETER','5.6'],
+        ['BRICK_TRACK_WIDTH','22.8']
+    ],
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
     pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
     action : true,
