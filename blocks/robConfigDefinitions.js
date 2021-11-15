@@ -1249,14 +1249,27 @@ confBlocks.motor.raspberrypi = {
 };
 confBlocks.motor.orb = {
     title : 'MOTOR',
+    ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
+    action : true,
+    dropdowns : [ [ 'MOTOR_REGULATION', [ [ 'YES', 'TRUE' ],[ 'NO', 'FALSE' ] ] ] ]
+};
+
+confBlocks.differentialdrive = {};
+confBlocks.differentialdrive.orb = {
+    title: 'DIFFERENTIALDRIVE',
     inputs: [
         ['BRICK_WHEEL_DIAMETER','5.6'],
         ['BRICK_TRACK_WIDTH','22.8']
     ],
-    ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
+    ports: [
+        ['MOTOR_LEFT', 'CONNECTOR'],
+        ['MOTOR_RIGHT', 'CONNECTOR']
+
+    ],
     pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
-    action : true,
-    dropdowns : [ [ 'MOTOR_REGULATION', [ [ 'YES', 'TRUE' ],[ 'NO', 'FALSE' ] ] ] , [ 'MOTOR_SIDE', [ [ 'MOTOR_LEFT', 'LEFT' ],[ 'MOTOR_RIGHT', 'RIGHT' ], [ 'MOTOR_NONE', 'NONE' ] ] ] ]
+    sensor: false,
+    inbuilt: true
 };
 
 confBlocks.digitalout = {};
