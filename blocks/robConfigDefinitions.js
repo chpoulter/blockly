@@ -236,15 +236,21 @@ Blockly.Blocks.robConfigDefinitions['pinsRaspberrypi'] = function() {
     return array;
 };
 
-Blockly.Blocks.robConfigDefinitions['pinsOrb'] = function() {
-    return createPins(1, 4);
+Blockly.Blocks.robConfigDefinitions['pinsOrbMotor'] = function() {
+    var array = createPins(1, 4, "M");
+    return array;
+};
+
+Blockly.Blocks.robConfigDefinitions['pinsOrbSensor'] = function() {
+    var array = createPins(1, 4, "S");
+    return array;
 };
 
 confBlocks.touch = {};
 confBlocks.touch.orb = {
     title : 'TOUCH',
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbSensor'],
     sensor : true
 };
 
@@ -253,8 +259,9 @@ confBlocks.colour = {};
 confBlocks.colour.orb = {
     title : 'COLOUR',
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
-    sensor : true
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbSensor'],
+    sensor : true,
+    standardPins: ['S4']
 };
 
 confBlocks.ultrasonic = {};
@@ -289,8 +296,9 @@ confBlocks.ultrasonic.calliope = {
 confBlocks.ultrasonic.orb = {
     title : 'ULTRASONIC',
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
-    sensor : true
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbSensor'],
+    sensor : true,
+    standardPins: ['S3']
 };
 
 confBlocks.ultrasonic.sensebox = {
@@ -515,8 +523,9 @@ confBlocks.infrared.wedo = {
 confBlocks.infrared.orb = {
     title : 'INFRARED',
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
-    sensor : true
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbSensor'],
+    sensor : true,
+    standardPins: ['S1']
 };
 confBlocks.infrared.arduino = {
     title: 'INFRARED',
@@ -1173,8 +1182,9 @@ confBlocks.gyro.calliope = {
 confBlocks.gyro.orb = {
     title : 'GYRO',
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
-    sensor : true
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbSensor'],
+    sensor : true,
+    standardPins: ['S2']
 };
 
 confBlocks.gyro.sensebox = {
@@ -1250,9 +1260,8 @@ confBlocks.motor.raspberrypi = {
 confBlocks.motor.orb = {
     title : 'MOTOR',
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbMotor'],
     action : true,
-    dropdowns : [ [ 'MOTOR_REGULATION', [ [ 'YES', 'TRUE' ],[ 'NO', 'FALSE' ] ] ] ]
 };
 
 confBlocks.differentialdrive = {};
@@ -1267,9 +1276,10 @@ confBlocks.differentialdrive.orb = {
         ['MOTOR_RIGHT', 'CONNECTOR']
 
     ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrb'],
+    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbMotor'],
     sensor: false,
-    inbuilt: true
+    inbuilt: true,
+    standardPins: ['M2', 'M3']
 };
 
 confBlocks.digitalout = {};
