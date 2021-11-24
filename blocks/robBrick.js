@@ -98,7 +98,7 @@ Blockly.Blocks['robBrick_WeDo-Brick'] = {
         return [ this.getFieldValue('VAR') ];
     },
 };
-
+/*
 Blockly.Blocks['robBrick_ORB-Brick'] = {
     init : function() {
         var name = Blockly.Variables.findLegalName(Blockly.Msg.BRICKNAME_ORB.charAt(0).toUpperCase(), this);
@@ -132,7 +132,7 @@ Blockly.Blocks['robBrick_ORB-Brick'] = {
         return [ this.getFieldValue('VAR') ];
     },
 };
-
+*/
 Blockly.Blocks['robBrick_senseBox-Brick'] = {
     /**
      * SenseBox brick.

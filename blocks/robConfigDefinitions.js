@@ -1259,7 +1259,7 @@ confBlocks.motor.raspberrypi = {
 };
 confBlocks.motor.orb = {
     title : 'MOTOR',
-    ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
+    ports : [ [ 'MOTOR', 'MOTOR' ] ],
     pins : Blockly.Blocks.robConfigDefinitions['pinsOrbMotor'],
     action : true,
 };
@@ -1272,14 +1272,15 @@ confBlocks.differentialdrive.orb = {
         ['BRICK_TRACK_WIDTH','22.8']
     ],
     ports: [
-        ['MOTOR_LEFT', 'CONNECTOR'],
-        ['MOTOR_RIGHT', 'CONNECTOR']
+        ['MOTOR_LEFT', 'MOTOR_L'],
+        ['MOTOR_RIGHT', 'MOTOR_R']
 
     ],
     pins : Blockly.Blocks.robConfigDefinitions['pinsOrbMotor'],
     sensor: false,
     inbuilt: true,
-    standardPins: ['M2', 'M3']
+    action : true,
+    standardPins: ['M2', 'M3'],
 };
 
 confBlocks.digitalout = {};
