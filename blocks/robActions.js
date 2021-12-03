@@ -1013,20 +1013,10 @@ Blockly.Blocks['robActions_led_on'] = {
             ports = new Blockly.FieldDropdown([[Blockly.Msg.LEFT, '2'], [Blockly.Msg.RIGHT, '1']]);
         } else if (this.workspace.device === 'edison') {
             ports = new Blockly.FieldDropdown([[Blockly.Msg.LEFT, 'LLED'], [Blockly.Msg.RIGHT, 'RLED']]);
-        } else if (this.workspace.device === 'mbot2') {
-             var slots = new Blockly.FieldDropdown([['1', 'LED1'], ['2', 'LED2'], ['3', 'LED3'], ['4', 'LED4'], ['5', 'LED5'], [Blockly.Msg.NAO_LED_ALL, 'LEDALL']]);
-            ports = getConfigPorts('rgbled');
-            this.dependConfig = {
-                'type': 'rgbled',
-                'dropDown': ports
-            };
         }
         if (this.workspace.device === 'edison') {
             this.appendDummyInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(ports, 'ACTORPORT');
-        } else if (this.workspace.device === 'mbot2'){
-           this.appendValueInput('COLOR').appendField(Blockly.Msg.RGBLED_ON).appendField(ports, 'ACTORPORT').appendField(slots, 'SLOT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
-           hidePortIfOnlyInbuilt(this);
-        }else {
+        } else {
             this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(ports, 'ACTORPORT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
         }
         this.setPreviousStatement(true);
@@ -1090,7 +1080,7 @@ Blockly.Blocks['robActions_led_off'] = {
             var slots = new Blockly.FieldDropdown([['1', 'LED1'], ['2', 'LED2'], ['3', 'LED3'], ['4', 'LED4'], ['5', 'LED5'], [Blockly.Msg.NAO_LED_ALL, 'LEDALL']]);
         }
          if (this.workspace.device === 'mbot2') {
-            this.appendDummyInput().appendField(Blockly.Msg.RGBLED_OFF).appendField(ports, 'ACTORPORT').appendField(slots, 'SLOT');
+            this.appendDummyInput().appendField(Blockly.Msg.RGBLED_OFF).appendField(ports, 'ACTORPORT').appendField(slots, 'LED');
             hidePortIfOnlyInbuilt(this);
         } else {
             this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(ports, 'ACTORPORT');
@@ -1100,6 +1090,7 @@ Blockly.Blocks['robActions_led_off'] = {
         this.setTooltip(Blockly.Msg.LED_OFF_TOOLTIP);
     }
 };
+Blockly.Blocks['robActions_leds_off'] = Blockly.Blocks['robActions_led_off'];
 
 Blockly.Blocks['robActions_sensorLight_on'] = {
     /**

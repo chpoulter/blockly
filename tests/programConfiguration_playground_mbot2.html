@@ -461,14 +461,14 @@
                 <block type="robActions_play_recording"></block>
             </category>
             <category name="TOOLBOX_LIGHT" svg="true">
-                <block type="robActions_led_on">
+                <block type="robActions_led_on_new_config">
                     <value name="COLOR">
                         <block type="robColour_picker">
                             <field name="COLOUR">#cc0000</field>
                         </block>
                     </value>
                 </block>                
-                <block type="robActions_led_off"></block>
+                <block type="robActions_leds_off"></block>
                 <block type="robActions_led_setBrightness">
                     <value name="BRIGHTNESS">
 					    <block type="math_number">
@@ -499,7 +499,7 @@
             <block type="robSensors_line_getSample"></block>
             <block type="robSensors_sound_getSample"></block>
             <block type="robSensors_sound_record"></block>
-            <block type="robSensors_joystick_getSample"></block>
+            <block type="robSensors_joystickKeys_getSample"></block>
             <block type="robSensors_key_getSample"></block>
             <block type="robSensors_light_getSample"></block>
             <block type="robSensors_gyro_getSample"></block>
