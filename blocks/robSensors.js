@@ -76,7 +76,7 @@ Blockly.Blocks['robSensors_sound_record'] = {
             'type': 'sound',
             'dropDown': dropDownPorts
         };
-        this.appendDummyInput().appendField(mode, 'MODE').appendField(Blockly.Msg.SENSOR_SOUND_RECORD).appendField(dropDownPorts, 'ACTORPORT');
+        this.appendDummyInput().appendField(mode, 'MODE').appendField(Blockly.Msg.SENSOR_SOUND_RECORD).appendField(dropDownPorts, 'SENSORPORT');
         hidePortIfOnlyInbuilt(this); 
         this.setPreviousStatement(true);
         this.setNextStatement(true);
