@@ -260,6 +260,7 @@ confBlocks.colour.orb = {
     title : 'COLOUR',
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
     pins : Blockly.Blocks.robConfigDefinitions['pinsOrbSensor'],
+    action : false,
     sensor : true,
     standardPins: ['S4']
 };
@@ -1260,8 +1261,8 @@ confBlocks.motor.raspberrypi = {
 confBlocks.motor.orb = {
     title : 'MOTOR',
     ports : [ [ 'MOTOR', 'MOTOR' ] ],
-    pins : Blockly.Blocks.robConfigDefinitions['pinsOrbMotor'],
-    action : true,
+    pins  : Blockly.Blocks.robConfigDefinitions['pinsOrbMotor'],
+    action: true,
 };
 
 confBlocks.differentialdrive = {};

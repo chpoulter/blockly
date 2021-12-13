@@ -28,6 +28,9 @@ Blockly.Blocks['robSensors_encoder_reset'] = {
     init: function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         var motorport = new Blockly.FieldDropdown([['A', 'A'], ['B', 'B'], ['C', 'C'], ['D', 'D']]);
+        if (this.workspace.device === 'orb'){
+            motorport = new Blockly.FieldDropdown([['M1', 'M1'], ['M2', 'S2'], ['M3', 'M3'], ['M4', 'M4']]);
+        }
         if (this.workspace.device === 'botnroll') {
             motorport = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_LEFT, 'B'], [Blockly.Msg.MOTOR_RIGHT, 'C']]);
         }
@@ -43,6 +46,9 @@ Blockly.Blocks['robSensors_gyro_reset'] = {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         // this.setInputsInline(true);
         var sensorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
+        if (this.workspace.device === 'orb'){
+            sensorPort = new Blockly.FieldDropdown([['S1', 'S1'], ['S2', 'S2'], ['S3', 'S3'], ['S4', 'S4']]);
+        }
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
