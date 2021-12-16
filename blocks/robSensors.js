@@ -49,17 +49,25 @@ Blockly.Blocks['robSensors_gyro_reset'] = {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         // this.setInputsInline(true);
         var sensorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
-        if (this.workspace.device === "mbot2") {
-            sensorPort = getConfigPorts("gyro");
-            this.dependConfig = {
-              type: "gyro",
-              dropDown: sensorPort,
-            };
-            this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
-            hidePortIfOnlyInbuilt(this);
-        } else {
-            this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
-        }
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
+        
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.GYRO_RESET_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robSensors_gyro_reset_axis'] = {
+    init: function () {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        var sensorPort = getConfigPorts("gyro");
+        this.dependConfig = {
+            type: "gyro",
+            dropDown: sensorPort,
+        };
+        var axis = new Blockly.FieldDropdown([['x', 'X'], ['y', 'Y'], ['z', 'Z'], [Blockly.Msg.NAO_LED_ALL, 'ALL']]);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(axis,'SLOT').appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
+        hidePortIfOnlyInbuilt(this);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.GYRO_RESET_TOOLTIP);
