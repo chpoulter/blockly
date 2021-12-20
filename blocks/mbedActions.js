@@ -762,3 +762,26 @@ Blockly.Blocks['mbedActions_motionkit_dual_set'] = {
         this.setTooltip(Blockly.Msg.MOTIONKIT_DUAL_TOOLTIP);
     }
 };
+
+Blockly.Blocks['mbedActions_dcmotor_set'] = {
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var motorPort = new Blockly.FieldDropdown([
+            [ Blockly.Msg.DCMOTOR_M1, '1' ],
+            [ Blockly.Msg.DCMOTOR_M2, '2' ],
+            [ Blockly.Msg.DCMOTOR_M3, '3' ],
+            [ Blockly.Msg.DCMOTOR_M4, '4' ]
+        ]);
+
+        this.appendValueInput('POWER')
+            .appendField(Blockly.Msg.MOTOR)
+            .appendField(motorPort, 'PORT')
+            .appendField(Blockly.Msg.ON)
+            .appendField(Blockly.Msg.MOTOR_SPEED)
+            .setCheck('Number');
+
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};

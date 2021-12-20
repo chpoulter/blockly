@@ -1597,3 +1597,8 @@ Blockly.Msg.POPUP_REPLACE = 'Replace';
 Blockly.Msg.POPUP_BACKGROUND_REPLACE = 'A program with the same name already exists. <br> Would you like to replace it?';
 Blockly.Msg.POPUP_BACKGROUND_REPLACE_CONFIGURATION = 'A configuration with the same name already exists. <br> Would you like to replace it?';
 Blockly.Msg.ORA_CONFIGURATION_SAVE_AS_ERROR_CONFIGURATION_EXISTS = 'This configuration already exists.';
+
+Blockly.Msg.DCMOTOR_M1 = 'Motor port 1';
+Blockly.Msg.DCMOTOR_M2 = 'Motor port 2';
+Blockly.Msg.DCMOTOR_M3 = 'Motor port 3';
+Blockly.Msg.DCMOTOR_M4 = 'Motor port 4';
