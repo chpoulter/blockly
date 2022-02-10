@@ -767,21 +767,36 @@ Blockly.Blocks['mbedActions_dcmotor_set'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var motorPort = new Blockly.FieldDropdown([
-            [ Blockly.Msg.DCMOTOR_M1, '1' ],
-            [ Blockly.Msg.DCMOTOR_M2, '2' ],
-            [ Blockly.Msg.DCMOTOR_M3, '3' ],
-            [ Blockly.Msg.DCMOTOR_M4, '4' ]
-        ]);
+        this.dropDownPorts = getConfigPorts('dcmotor');
+        this.dependConfig = {
+            'type' : 'dcmotor',
+            'dropDown' : this.dropDownPorts
+        };
 
-        this.appendValueInput('POWER')
-            .appendField(Blockly.Msg.MOTOR)
-            .appendField(motorPort, 'PORT')
-            .appendField(Blockly.Msg.ON)
-            .appendField(Blockly.Msg.MOTOR_SPEED)
+        this.motorDirection = new Blockly.FieldDropdown([            
+            [ Blockly.Msg.DCMOTOR_BACKWARD, 'Backward' ],
+            [ Blockly.Msg.DCMOTOR_STOP, 'Stop' ],
+			[ Blockly.Msg.DCMOTOR_FORWARD, 'Forward' ],
+			[ Blockly.Msg.DCMOTOR_NUMERIC, 'Numeric' ]
+		]);
+
+        this.appendValueInput('MOTOR')
+            .appendField(Blockly.Msg.DCMOTOR_BOARD)
+            .appendField(this.dropDownPorts, 'ACTORPORT')
+			.setAlign(Blockly.ALIGN_RIGHT)
+			.appendField(Blockly.Msg.DCMOTOR_MOTOR)
+            .setCheck('Number');
+
+        this.appendValueInput('SPEED')
+			.setAlign(Blockly.ALIGN_RIGHT)			
+            .appendField(Blockly.Msg.DCMOTOR_SPEED)
+			.appendField(this.motorDirection, 'DIRECTION')
+			.appendField(Blockly.Msg.PERCENT)
             .setCheck('Number');
 
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+		this.setTooltip(Blockly.Msg.DCMOTOR_TOOLTIP);
     }
+
 };
