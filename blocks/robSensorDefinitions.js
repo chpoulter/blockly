@@ -1452,6 +1452,17 @@ sensors.environmental.sensebox = {
     ports : 'CONFIGURATION'
 };
 
+sensors.ultrasonic_hcsr04 = {};
+sensors.ultrasonic_hcsr04.calliope = {
+    title : 'ULTRASONIC_HCSR04',
+    modes : [ {
+        name : 'DISTANCE',
+        type : 'Number',
+        unit : 'CM'
+    } ],
+    ports : 'CONFIGURATION'
+};
+
 sensors.out.nano33ble           = sensors.out.arduino;
 sensors.key.nano33ble           = sensors.key.arduino;
 sensors.timer.nano33ble         = sensors.timer.arduino;
@@ -1480,7 +1491,7 @@ sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sens
 sensorsAll.bob3 = [ sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
 sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
         sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
-        sensors.accelerometer.calliope, sensors.humidity.calliope, sensors.ultrasonic.calliope, sensors.infrared.calliope ];
+        sensors.accelerometer.calliope, sensors.humidity.calliope, sensors.ultrasonic.calliope, sensors.infrared.calliope, sensors.ultrasonic_hcsr04.calliope ];
 sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
         sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit, sensors.light.microbit ];
 sensorsAll.arduino = [ sensors.out.arduino, sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino,

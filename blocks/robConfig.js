@@ -183,6 +183,14 @@ Blockly.Blocks['robConf_generic'] = {
                     });
                 }
             }
+            if (confBlock.types) {
+                for (var i = 0; i < confBlock.types.length; i++) {
+                    configDecl.push({
+                        'type' : confBlock.types[i].toLowerCase(),
+                        'name' : that.getFieldValue('NAME')
+                    });
+                }
+            }
             configDecl.push({
                 'type' : confBlock.title.toLowerCase(),
                 'name' : that.getFieldValue('NAME')

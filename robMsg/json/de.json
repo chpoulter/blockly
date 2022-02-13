@@ -1394,6 +1394,7 @@
     "MODE_VOCEQUIVALENT": "Atemluft VOC Äquivalent",
 	"NN_IO_NEURON_NAMES_INVALID": "Namen der Input/Output-Neuronem müssen unterschiedlich und gültig sein (mit Buchstaben beginnen, keine Leerzeichen, ...)",
 	"NN_STEP_TOOLTIP": "hole die Werte für die Input-Neuronen, führe einen Schritt im neuronalen Netzwerk aus und schreibe die Werte der Output-Neuronen in die Variablen",
-	"NN_STEP": "ein NN Schritt"
-
+	"NN_STEP": "ein NN Schritt",
+	"ULTRASONIC_HCSR04": "Ultrasonic HC-SR04",
+	"FACTOR": "Faktor"
 }

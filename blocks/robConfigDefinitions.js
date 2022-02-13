@@ -1456,6 +1456,28 @@ confBlocks.environmental.sensebox = {
     sensor: true
 };
 
+confBlocks.ultrasonic_hcsr04 = {};
+confBlocks.ultrasonic_hcsr04.calliope = {
+    title: 'ULTRASONIC_HCSR04',
+    ports: [
+        ['trig', 'TRIG'],
+        ['echo', 'ECHO']
+    ],
+    pins: function(a) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },    
+    standardPins: ['C17', 'C16'],
+    fixedPorts: [
+        ['GND', 'GND'],
+        ['VCC', '3V']
+    ],
+    types: ['ULTRASONIC'],
+    inputs: [
+        ['FACTOR', '58']
+    ],
+    sensor: true
+};
+
 // all arduino conf blocks are inherited by nano33ble
 for (var confBlock in confBlocks) {
     var confObj = confBlocks[confBlock];
