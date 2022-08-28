@@ -77,7 +77,8 @@ goog.require('Blockly.Blocks.naoBrick');
 goog.require('Blockly.Blocks.naoColour'); 
 goog.require('Blockly.Blocks.naoSensors'); 
 goog.require('Blockly.Blocks.procedures'); 
-goog.require('Blockly.Blocks.robActions'); 
+goog.require('Blockly.Blocks.robActions');
+goog.require('Blockly.Blocks.robActionsNewConfig');
 goog.require('Blockly.Blocks.robBrick'); 
 goog.require('Blockly.Blocks.robColour'); 
 goog.require('Blockly.Blocks.robCommunication'); 
@@ -92,6 +93,7 @@ goog.require('Blockly.Blocks.texts');
 goog.require('Blockly.Blocks.variables'); 
 goog.require('Blockly.Blocks.vorwerkActions'); 
 
+goog.require('Blockly.Blocks.festobionicActions'); 
 
 // Turn off debugging when compiled.
 var CLOSURE_DEFINES = {'goog.DEBUG': false};

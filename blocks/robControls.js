@@ -53,6 +53,7 @@ Blockly.Blocks['robControls_start'] = {
         var debug;
         switch (this.workspace.device) {
         case 'ev3':
+        case 'xNN':
             debug = new Blockly.FieldCheckbox("FALSE");
             var textDebug = new Blockly.FieldDropdown([ [ Blockly.Msg.START_PROGRAM_DEBUG || 'START_PROGRAM_DEBUG', 'a' ] ]);
             this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG").appendField(textDebug);
@@ -519,7 +520,7 @@ Blockly.Blocks['robControls_wait_for'] = {
 
             if (this.workspace.device === 'botnroll') {
                 s = this.workspace.newBlock('robSensors_getSample_ardu');
-            } else if (this.workspace.device === 'bob3') {
+            } else if (this.workspace.device === 'bob3' || this.workspace.device === 'rob3rta') {
                 s = this.workspace.newBlock('bob3Sensors_getSample_bob3');
             } else {
                 s = this.workspace.newBlock('robSensors_getSample');
